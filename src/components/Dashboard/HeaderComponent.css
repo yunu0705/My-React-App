@@ -1,0 +1,50 @@
+.greeting-text {
+  margin-top: 10px;
+  text-align: left;
+  margin-right: auto;
+  font-size: 16px;
+  color: #333;
+}
+
+.nav-menu ul li a:hover,
+.nav-menu ul li a:focus,
+.nav-menu ul li a:active {
+  border-bottom-color: #333;
+}
+
+.menu-1 {
+  text-align: left;
+  font-size: 16px;
+  color: #333;
+}
+
+.header-menu {
+  display: flex;
+  justify-content: space-between;
+  /* 子要素を両端に配置 */
+  padding: 5px 15px;
+  margin-left: -40px;
+}
+
+.logout-button {
+  font-size: 16px;
+  background: #b7e7ff;
+  /* ボタンの背景色 */
+  border-radius: 3px;
+  color: #333;
+  /* テキストの色 */
+  border: none;
+  /* 通常時のボーダーを削除 */
+  padding: 10px 10px;
+  /* パディングを追加 */
+  cursor: pointer;
+  /* マウスカーソルをポインターにする */
+  transition: border-bottom-color 0.3s;
+  /* アニメーション */
+  border-bottom: 2px solid transparent;
+  /* 下線のデフォルトを透明に設定 */
+}
+
+.logout-button:hover {
+  background-color: #91c7e9;
+}

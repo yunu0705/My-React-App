@@ -1,0 +1,262 @@
+/* PC表示用のスタイル */
+@media (min-width: 1025px) {
+  .hamburgerIcon {
+    display: none;
+    /* PC表示時には非表示 */
+  }
+}
+
+/* スマホ表示 */
+@media screen and (min-width: 344px) and (max-width: 430px) {
+  .greeting {
+    margin: 70px;
+    padding: 8px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    /* テキストの色を指定 */
+    margin-bottom: -130px;
+  }
+
+  #hamburger-menu {
+    display: block;
+  }
+
+  /* メニュー開いた時の設定 */
+  .HM {
+    background-color: #cfefff;
+    padding: 0;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    z-index: 2000;
+    height: 50px;
+  }
+
+
+  .hamburgerIcon {
+    display: flex;
+    /* スマホ表示時には表示 */
+  }
+
+  .hamburgerLine {
+    display: block;
+    width: 100%;
+    height: 4px;
+    background-color: #808797df;
+    border-radius: 2px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+
+  .open .hamburgerLine:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .open .hamburgerLine:nth-child(2) {
+    opacity: 0;
+  }
+
+  .open .hamburgerLine:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* 開いた後の白い背景メニューの設定 */
+  .drawerContainer {
+    transform: translateX(-100%);
+    background-color: #ffffff;
+    border: none;
+    z-index: 2000;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+  }
+
+  /* ドロワーが表示される時は左からスライドイン */
+  .open .drawerContainer {
+    transform: translateX(0);
+  }
+
+  .listItem {
+    top: 130px;
+    left: 100px;
+    padding: 30px;
+    margin-bottom: 40px;
+    background-color: #ffffff;
+  }
+
+  .listItemText {
+    font-size: 18px;
+    /* フォントサイズの指定 */
+    font-family: ヒラギノ角ゴシック, sans-serif;
+    /* フォントファミリーの指定（任意） */
+    color: #665f5f;
+  }
+
+  .logoutButton {
+    background-color: #48a3e8;
+    /* ボタンの背景色 */
+    color: #fff;
+    /* 文字色 */
+    width: 40%;
+    /* 全幅 */
+    padding: 10px 20px;
+    /* 内側の余白 */
+    text-align: center;
+    /* 文字の中央揃え */
+    border-radius: 5px;
+    /* ボタンを丸くする */
+    cursor: pointer;
+    /* カーソルをポインタに変更 */
+  }
+
+}
+
+/* ハンバーガーメニューアイコンのスタイル */
+.hamburgerIcon {
+  width: 30px;
+  height: 20px;
+  position: fixed;
+  margin-top: -9px;
+  left: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  z-index: 3000;
+}
+
+/* タブレット向け */
+@media screen and (min-width: 540px) and (max-width: 1024px) {
+
+  .greeting {
+    margin: 70px;
+    margin-left: 0px;
+    text-align: left;
+    font-weight: bold;
+    color: #333;
+    /* テキストの色を指定 */
+    margin-bottom: -140px;
+  }
+
+  #hamburger-menu {
+    display: block;
+  }
+
+  /* 上部の水色バー */
+  .HM {
+    background-color: #cfefff;
+    padding: 0;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    z-index: 2000;
+    height: 60px;
+  }
+
+  .hamburgerIcon {
+    display: flex;
+    /* スマホ表示時には表示 */
+  }
+
+  .hamburgerLine {
+    display: block;
+    width: 100%;
+    height: 4.5px;
+    background-color: #808797df;
+    border-radius: 2px;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+  }
+
+  .open .hamburgerLine:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .open .hamburgerLine:nth-child(2) {
+    opacity: 0;
+  }
+
+  .open .hamburgerLine:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* 開いた後の白い背景メニューの設定 */
+  .drawerContainer {
+    transform: translateX(-100%);
+    background-color: #ffffff;
+    border: none;
+    z-index: 2000;
+    height: 100%;
+    width: 38%;
+  }
+
+  .logoutButton {
+    width: 120px !important;
+  }
+
+  /* ドロワーが表示される時は左からスライドイン */
+  .open .drawerContainer {
+    transform: translateX(0);
+  }
+
+  .listItem {
+    top: 130px;
+    left: 0%;
+    padding: 30px;
+    margin-bottom: 40px;
+    background-color: #ffffff;
+  }
+
+  .listItemText {
+    font-size: 18px;
+    /* フォントサイズの指定 */
+    font-family: ヒラギノ角ゴシック, sans-serif;
+    /* フォントファミリーの指定（任意） */
+    color: #665f5f;
+  }
+
+
+
+  .logoutButton {
+    background-color: #48a3e8;
+    /* ボタンの背景色 */
+    color: #fff;
+    /* 文字色 */
+    width: 40%;
+    /* 全幅 */
+    padding: 10px 20px;
+    /* 内側の余白 */
+    text-align: center;
+    /* 文字の中央揃え */
+    border-radius: 5px;
+    /* ボタンを丸くする */
+    cursor: pointer;
+    /* カーソルをポインタに変更 */
+  }
+
+}
+
+/* ハンバーガーメニュー三本線のスタイル */
+.hamburgerIcon {
+  width: 30px;
+  height: 20px;
+  position: fixed;
+  margin-top: 0px;
+  left: 20px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  z-index: 3000;
+}
+
+
+
+/* PC表示用のスタイル */
+@media (min-width: 1025px) {
+  .hamburgerIcon {
+    display: none;
+    /* PC表示時には非表示 */
+  }
+}

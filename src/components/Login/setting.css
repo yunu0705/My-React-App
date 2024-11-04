@@ -1,0 +1,1155 @@
+/* タブレット向けのメディアクエリ */
+
+/* ===== iPad Mini (768px ~ 768px) ===== */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .setting {
+    display: flex;
+    justify-content: center;
+    /* 横方向の中央揃え */
+    align-items: center;
+  }
+
+  .p-text {
+    text-align: center;
+    margin-top: -80px;
+    margin-bottom: 5%;
+    font-size: 1.4em;
+    color: #333;
+  }
+
+  .p-text2 {
+    text-align: left;
+    margin-left: -8%;
+    margin-top: 0px;
+    font-size: 1.1em;
+    color: #333;
+  }
+
+  .p-text3 {
+    text-align: center !important;
+    margin-top: -20% !important;
+    margin-left: 0% !important;
+    margin-bottom: 5% !important;
+    font-size: 1.2em !important;
+    color: #333 !important;
+    margin-bottom: 5%;
+  }
+
+
+  .RegisterSuccess {
+    background-color: #ffffff;
+    padding: 0px;
+    padding-top: 80px;
+    margin: 0 auto;
+    /* フォームを中央に配置 */
+    margin-top: 200px;
+    width: 90%;
+    /* フォームの幅を画面幅の90%に設定 */
+    box-sizing: border-box;
+    /* パディングを含めたボックスサイズを計算 */
+  }
+
+  .RegisterSuccess p {
+    font-size: 13px;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #333;
+    line-height: 30px;
+  }
+
+  /* ログイン画面 */
+  .RegisterFormTop {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 0 auto;
+    /* フォームを中央に配置 */
+    margin-top: 100px;
+    width: 500px !important;
+    box-sizing: border-box;
+    /* パディングを含めたボックスサイズを計算 */
+    transform: scale(1.0)
+  }
+
+  .RegisterFormTop input[type="checkbox"] {
+    width: auto;
+    /* チェックボックスは自動幅に設定 */
+    margin: 10;
+    /* チェックボックスの余白をリセット */
+  }
+
+  .formFont label {
+    font-size: 14px;
+  }
+
+  .formFont input {
+    width: 100%;
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .password-container {
+    position: relative;
+  }
+
+  .password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  .password-toggle-register {
+    position: absolute;
+    top: 65%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #9ca3af;
+  }
+
+  .submit button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  /* ストリーマーズランドアイコン画像 */
+  .image-styleSL {
+    max-width: 80%;
+    height: auto;
+    align-items: center;
+    margin-left: 9%;
+    margin-top: -10%;
+    margin-bottom: 5%;
+  }
+
+  .required {
+    font-size: 12px;
+    color: red;
+  }
+
+  .error-message {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .body-1 {
+    padding: 10px 0;
+  }
+
+  /* パスワード表示/非表示アイコン */
+  .password-container {
+    position: relative;
+  }
+
+  .password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #9ca3af;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    background-color: #f9fafb;
+    font-size: 1rem;
+    color: #333;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    border-color: #6366f1;
+  }
+
+  .p1 {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .submit button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 2%;
+    background-color: #6366f1;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .submit button:hover {
+    background-color: #4f46e5;
+  }
+
+  .body-1 {
+    background-image: linear-gradient(90deg, rgba(251, 213, 251, 1), rgba(149, 233, 243, 1));
+    height: 100vh;
+    width: 100vh;
+    padding: 80px 0;
+  }
+
+  /* パスワードをお忘れの方 */
+  .forgot-password-link:link {
+    color: #717171;
+    /* クリック前の色 */
+  }
+
+  .forgot-password-link:visited {
+    color: #717171;
+    /* クリック後も同じ色 */
+  }
+
+  .forgot-password-link:hover {
+    color: #0056b3;
+    /* マウスが乗ったときの色（任意） */
+  }
+
+  .forgot-password-link:active {
+    color: #004085;
+    /* クリック中の色（任意） */
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+}
+
+/* ===== iPad Air (820px ~ 820px) ===== */
+@media screen and (min-width: 820px) and (max-width: 1180px) {
+  .setting {
+    display: flex;
+    justify-content: center;
+    /* 横方向の中央揃え */
+    align-items: center;
+  }
+
+  .p-text {
+    text-align: center;
+    margin-left: -2% !important;
+    margin-top: -20%;
+    font-size: 1.4em;
+    color: #333;
+  }
+
+  .p-text2 {
+    text-align: left;
+    margin-left: 0% !important;
+    margin-top: -10px;
+    font-size: 1.1em;
+    color: #333;
+  }
+
+  .p-text3 {
+    text-align: center !important;
+    margin-left: 0 !important;
+    margin-top: -20% !important;
+    font-size: 1.2em !important;
+    color: #333 !important;
+  }
+
+
+
+  .RegisterSuccess {
+    background-color: #ffffff;
+    padding: 0px;
+    padding-top: 80px;
+    margin: 0 auto;
+    /* フォームを中央に配置 */
+    margin-top: 200px;
+    width: 90%;
+    /* フォームの幅を画面幅の90%に設定 */
+    box-sizing: border-box;
+    /* パディングを含めたボックスサイズを計算 */
+  }
+
+  .RegisterSuccess p {
+    font-size: 13px;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #333;
+    line-height: 30px;
+  }
+
+  /* ログイン画面 */
+  .RegisterFormTop {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 0 auto;
+    /* フォームを中央に配置 */
+    margin-top: 100px;
+    width: 500px !important;
+    box-sizing: border-box;
+    /* パディングを含めたボックスサイズを計算 */
+    transform: scale(1.0)
+  }
+
+  .RegisterFormTop input[type="checkbox"] {
+    width: auto;
+    /* チェックボックスは自動幅に設定 */
+    margin: 10;
+    /* チェックボックスの余白をリセット */
+  }
+
+  .formFont label {
+    font-size: 14px;
+  }
+
+  .formFont input {
+    width: 100%;
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .password-container {
+    position: relative;
+  }
+
+  .password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  .password-toggle-register {
+    position: absolute;
+    top: 65%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #9ca3af;
+  }
+
+  .submit button {
+    width: 100%;
+    margin-top: 2%;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  /* ストリーマーズランドアイコン画像 */
+  .image-styleSL {
+    max-width: 80%;
+    height: auto;
+    align-items: center;
+    margin-left: 9%;
+  }
+
+  .required {
+    font-size: 12px;
+    color: red;
+  }
+
+  .error-message {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .body-1 {
+    padding: 10px 0;
+  }
+
+  /* パスワード表示/非表示アイコン */
+  .password-container {
+    position: relative;
+  }
+
+  .password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #9ca3af;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    background-color: #f9fafb;
+    font-size: 1rem;
+    color: #333;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    border-color: #6366f1;
+  }
+
+  .p1 {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .submit button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 2%;
+    background-color: #6366f1;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .submit button:hover {
+    background-color: #4f46e5;
+  }
+
+  .body-1 {
+    background-image: linear-gradient(90deg, rgba(251, 213, 251, 1), rgba(149, 233, 243, 1));
+    height: 100vh;
+    width: 100vh;
+    padding: 80px 0;
+  }
+
+  /* パスワードをお忘れの方 */
+  .forgot-password-link:link {
+    color: #717171;
+    /* クリック前の色 */
+  }
+
+  .forgot-password-link:visited {
+    color: #717171;
+    /* クリック後も同じ色 */
+  }
+
+  .forgot-password-link:hover {
+    color: #0056b3;
+    /* マウスが乗ったときの色（任意） */
+  }
+
+  .forgot-password-link:active {
+    color: #004085;
+    /* クリック中の色（任意） */
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  /* ======== パスワード再設定ページ　======== */
+
+  h2,
+  label {
+    color: #333;
+  }
+
+  .p-text5 {
+    font-size: 1.0em;
+    text-align: left;
+    margin-bottom: 5%;
+    color: #333;
+
+  }
+
+  .reset-submit button {
+    width: 100%;
+    margin-bottom: 5%;
+    padding: 12px;
+    background-color: #6366f1;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .reset-submit button:hover {
+    background-color: #4f46e5;
+  }
+
+  .error-message,
+  .success-message {
+    margin-bottom: 10%;
+    /* ボタンとの間に15pxのスペースを追加 */
+  }
+
+}
+
+/* ===== iPad Pro (1024px ~ 1024px) ===== */
+@media screen and (min-width: 1024px) and (max-width: 1024px) {
+  .setting {
+    display: flex;
+    justify-content: center;
+    /* 横方向の中央揃え */
+    align-items: center;
+  }
+
+  .p-text {
+    text-align: center;
+    margin-left: 10%;
+    margin-top: -70px;
+    font-size: 1.4em;
+    color: #333;
+  }
+
+  .p-text2 {
+    text-align: left;
+    margin-left: 0% !important;
+    margin-top: 0px !important;
+    font-size: 1.1em;
+    color: #333;
+  }
+
+
+  .RegisterSuccess {
+    background-color: #ffffff;
+    padding: 0px;
+    padding-top: 80px;
+    margin: 0 auto;
+    /* フォームを中央に配置 */
+    margin-top: 200px;
+    width: 90%;
+    /* フォームの幅を画面幅の90%に設定 */
+    box-sizing: border-box;
+    /* パディングを含めたボックスサイズを計算 */
+  }
+
+  .RegisterSuccess p {
+    font-size: 13px;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #333;
+    line-height: 30px;
+  }
+
+  /* ログイン画面 */
+  .RegisterFormTop {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 0 auto;
+    /* フォームを中央に配置 */
+    margin-top: 60px;
+    width: 500px !important;
+    box-sizing: border-box;
+    /* パディングを含めたボックスサイズを計算 */
+    transform: scale(1.0)
+  }
+
+  .RegisterFormTop input[type="checkbox"] {
+    width: auto;
+    /* チェックボックスは自動幅に設定 */
+    margin: 10;
+    /* チェックボックスの余白をリセット */
+  }
+
+  .formFont label {
+    font-size: 14px;
+  }
+
+  .formFont input {
+    width: 100%;
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .password-container {
+    position: relative;
+  }
+
+  .password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  .password-toggle-register {
+    position: absolute;
+    top: 65%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #9ca3af;
+  }
+
+  .submit button {
+    width: 100%;
+    margin-top: 2%;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  /* ストリーマーズランドアイコン画像 */
+  .image-styleSL {
+    max-width: 80%;
+    height: auto;
+    align-items: center;
+    margin-left: 9%;
+  }
+
+  .required {
+    font-size: 12px;
+    color: red;
+  }
+
+  .error-message {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .body-1 {
+    padding: 10px 0;
+  }
+
+  /* パスワード表示/非表示アイコン */
+  .password-container {
+    position: relative;
+  }
+
+  .password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #9ca3af;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    background-color: #f9fafb;
+    font-size: 1rem;
+    color: #333;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    border-color: #6366f1;
+  }
+
+  .p1 {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .submit button {
+    width: 100%;
+    margin-top: 2%;
+    padding: 12px;
+    background-color: #6366f1;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .submit button:hover {
+    background-color: #4f46e5;
+  }
+
+  .body-1 {
+    background-image: linear-gradient(90deg, rgba(251, 213, 251, 1), rgba(149, 233, 243, 1));
+    height: 100vh;
+    width: 100vh;
+    padding: 80px 0;
+  }
+
+  /* パスワードをお忘れの方 */
+  .forgot-password-link:link {
+    color: #717171;
+    /* クリック前の色 */
+  }
+
+  .forgot-password-link:visited {
+    color: #717171;
+    /* クリック後も同じ色 */
+  }
+
+  .forgot-password-link:hover {
+    color: #0056b3;
+    /* マウスが乗ったときの色（任意） */
+  }
+
+  .forgot-password-link:active {
+    color: #004085;
+    /* クリック中の色（任意） */
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+}
+
+
+
+/* ===== Surface Duo (540px ~ 540px) ===== */
+@media screen and (min-width: 540px) and (max-width: 540px) {
+  .setting {
+    display: flex;
+    justify-content: center;
+    /* 横方向の中央揃え */
+    align-items: center;
+  }
+
+  .p-text {
+    text-align: center;
+    margin-left: -12%;
+    margin-top: -70px;
+    font-size: 1.4em;
+    color:
+      #333;
+  }
+
+  .p-text2 {
+    text-align: left;
+    margin-left: 0% !important;
+    margin-top: 0px !important;
+    font-size: 1.0em;
+    color: #333;
+  }
+
+  .p-text3 {
+    text-align: center !important;
+    margin-top: -20% !important;
+    font-size: 1.2em !important;
+    color: #333 !important;
+  }
+
+  .RegisterSuccess {
+    background-color: #ffffff;
+    padding: 0px;
+    padding-top: 80px;
+    margin: 0 auto;
+    /* フォームを中央に配置 */
+    margin-top: 200px;
+    width: 90%;
+    /* フォームの幅を画面幅の90%に設定 */
+    box-sizing: border-box;
+    /* パディングを含めたボックスサイズを計算 */
+  }
+
+  .RegisterSuccess p {
+    font-size: 13px;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #333;
+    line-height: 30px;
+  }
+
+  /* ログイン画面 */
+  .RegisterFormTop {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 0 auto;
+    /* フォームを中央に配置 */
+    margin-top: 0px;
+    width: 500px !important;
+    box-sizing: border-box;
+    /* パディングを含めたボックスサイズを計算 */
+    transform: scale(1.0)
+  }
+
+  .RegisterFormTop input[type="checkbox"] {
+    width: auto;
+    /* チェックボックスは自動幅に設定 */
+    margin: 10;
+    /* チェックボックスの余白をリセット */
+  }
+
+  .formFont label {
+    font-size: 14px;
+  }
+
+  .formFont input {
+    width: 100%;
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .password-container {
+    position: relative;
+  }
+
+  .password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  .password-toggle-register {
+    position: absolute;
+    top: 65%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #9ca3af;
+  }
+
+  .submit button {
+    width: 100%;
+    margin-top: 2%;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  /* ストリーマーズランドアイコン画像 */
+  .image-styleSL {
+    max-width: 80%;
+    height: auto;
+    align-items: center;
+    margin-left: 9%;
+  }
+
+  .required {
+    font-size: 12px;
+    color: red;
+  }
+
+  .error-message {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .body-1 {
+    padding: 10px 0;
+  }
+
+  /* パスワード表示/非表示アイコン */
+  .password-container {
+    position: relative;
+  }
+
+  .password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #9ca3af;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    background-color: #f9fafb;
+    font-size: 1rem;
+    color: #333;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    border-color: #6366f1;
+  }
+
+  .p1 {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .submit button {
+    width: 100%;
+    margin-top: 2%;
+    padding: 12px;
+    background-color: #6366f1;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .submit button:hover {
+    background-color: #4f46e5;
+  }
+
+  .body-1 {
+    background-image: linear-gradient(90deg, rgba(251, 213, 251, 1), rgba(149, 233, 243, 1));
+    height: 100vh;
+    width: 100vh;
+    padding: 80px 0;
+  }
+
+  /* パスワードをお忘れの方 */
+  .forgot-password-link:link {
+    color: #717171;
+    /* クリック前の色 */
+  }
+
+  .forgot-password-link:visited {
+    color: #717171;
+    /* クリック後も同じ色 */
+  }
+
+  .forgot-password-link:hover {
+    color: #0056b3;
+    /* マウスが乗ったときの色（任意） */
+  }
+
+  .forgot-password-link:active {
+    color: #004085;
+    /* クリック中の色（任意） */
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  /* ===== Surface Pro 7 (912px ~ 912px) ===== */
+  @media screen and (min-width: 912px) and (max-width: 912px) {
+    .setting {
+      display: flex;
+      justify-content: center;
+      /* 横方向の中央揃え */
+      align-items: center;
+    }
+
+    .p-text {
+      text-align: center;
+      margin-left: -12%;
+      margin-top: -70px;
+      font-size: 1.4em;
+      color: #333;
+    }
+
+    .p-text2 {
+      text-align: left;
+      margin-left: 0% !important;
+      margin-top: 0px;
+      font-size: 1.1em;
+      color: #333;
+    }
+
+    .RegisterSuccess {
+      background-color: #ffffff;
+      padding: 0px;
+      padding-top: 80px;
+      margin: 0 auto;
+      /* フォームを中央に配置 */
+      margin-top: 200px;
+      width: 90%;
+      /* フォームの幅を画面幅の90%に設定 */
+      box-sizing: border-box;
+      /* パディングを含めたボックスサイズを計算 */
+    }
+
+    .RegisterSuccess p {
+      font-size: 13px;
+      margin-bottom: 20px;
+      text-align: left;
+      color: #333;
+      line-height: 30px;
+    }
+
+    /* ログイン画面 */
+    .RegisterFormTop {
+      background-color: #ffffff;
+      border-radius: 8px;
+      padding: 10px;
+      margin: 0 auto;
+      /* フォームを中央に配置 */
+      margin-top: 100px;
+      width: 500px !important;
+      box-sizing: border-box;
+      /* パディングを含めたボックスサイズを計算 */
+      transform: scale(1.0)
+    }
+
+    .RegisterFormTop input[type="checkbox"] {
+      width: auto;
+      /* チェックボックスは自動幅に設定 */
+      margin: 10;
+      /* チェックボックスの余白をリセット */
+    }
+
+    .formFont label {
+      font-size: 14px;
+    }
+
+    .formFont input {
+      width: 100%;
+      font-size: 12px;
+      padding: 10px;
+    }
+
+    .password-container {
+      position: relative;
+    }
+
+    .password-toggle {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    .password-toggle-register {
+      position: absolute;
+      top: 65%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #9ca3af;
+    }
+
+    .submit button {
+      width: 100%;
+      margin-top: 2%;
+      padding: 12px;
+      font-size: 16px;
+    }
+
+    /* ストリーマーズランドアイコン画像 */
+    .image-styleSL {
+      max-width: 80%;
+      height: auto;
+      align-items: center;
+      margin-left: 9%;
+    }
+
+    .required {
+      font-size: 12px;
+      color: red;
+    }
+
+    .error-message {
+      font-size: 14px;
+      margin-top: 10px;
+    }
+
+    .body-1 {
+      padding: 10px 0;
+    }
+
+    /* パスワード表示/非表示アイコン */
+    .password-container {
+      position: relative;
+    }
+
+    .password-toggle {
+      position: absolute;
+      top: 0%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+      color: #9ca3af;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 4px;
+      background-color: #f9fafb;
+      font-size: 1rem;
+      color: #333;
+      box-sizing: border-box;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      border-color: #6366f1;
+    }
+
+    .p1 {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .submit button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 2%;
+      background-color: #6366f1;
+      color: #ffffff;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .submit button:hover {
+      background-color: #4f46e5;
+    }
+
+    .body-1 {
+      background-image: linear-gradient(90deg, rgba(251, 213, 251, 1), rgba(149, 233, 243, 1));
+      height: 100vh;
+      width: 100vh;
+      padding: 80px 0;
+    }
+  }
+}

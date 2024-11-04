@@ -1,0 +1,645 @@
+/* PC表示、設定 */
+@media (min-width: 1025px) {
+  .schedule-list-container {
+    margin-left: 30px;
+    margin-right: 250px;
+  }
+
+  html,
+  body {
+    overflow-x: hidden;
+    /* 水平方向のスクロールを防止 */
+    margin: 0;
+    padding: 0;
+  }
+
+  /* PC表示用ヘッダーメニューのスタイル */
+  .header-menu {
+    background-color: #ffffff;
+    padding: 5px 40px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1001;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .footer-menu {
+    display: none;
+    /* デフォルトではPC表示時に非表示 */
+  }
+
+  .nav-menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    /* 垂直方向に中央揃え */
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  .nav-menu ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: auto;
+    gap: 20px;
+    /* メニュー項目間のスペースを設定 */
+  }
+
+  .nav-menu ul li {
+    margin-right: 0px;
+  }
+
+  .nav-menu ul li a {
+    color: #333;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.3s ease;
+    white-space: nowrap;
+    /* テキストを改行させない */
+  }
+
+  .active-page-line {
+    background-color: #cfefff;
+    padding: 0;
+    width: 100%;
+    position: fixed;
+    top: 39px;
+    left: 0;
+    z-index: 1000;
+    height: 70px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .dashboard-container {
+    padding: 20px;
+    margin: 150px auto 0;
+    /* ヘッダーメニューと太枠ラインの高さ分だけ余白を追加 */
+    max-width: 1200px;
+  }
+
+
+  .activePageLine-container {
+    flex-shrink: 0;
+    min-width: 200px;
+    text-align: center;
+    margin-top: 25px;
+    margin-right: 250px;
+    display: flex;
+    gap: 10px;
+    line-height: 1.5;
+    transition: background-color 0.3s ease;
+    white-space: nowrap;
+    justify-content: flex-end;
+    max-width: 100%;
+    /* ボタンコンテナがウィンドウ幅に収まるようにする */
+  }
+
+  .delete-button-container .button {
+    flex-shrink: 0;
+    padding: 10px 20px;
+    min-width: 120px;
+    max-width: 100%;
+    text-overflow: ellipsis;
+    /* テキストが溢れる場合に省略記号を表示 */
+    overflow: hidden;
+    white-space: nowrap;
+    /* テキストを改行させない */
+  }
+
+  .mobile-header-text {
+    display: none;
+  }
+}
+
+/* ======= iPhone SE ====== */
+@media screen and (min-width: 375px) and (max-width: 414px) {
+
+
+
+  html,
+  body {
+    overflow-x: hidden;
+    width: 90vw;
+  }
+
+  .header-menu {
+    display: none;
+  }
+
+  .menu-1 {
+    display: none;
+  }
+
+  .logout-button {
+    display: none;
+  }
+
+  .greeting-text {
+    display: none;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .schedule-list-container td {
+    white-space: nowrap;
+    /* テキストの改行を防ぐ */
+    overflow: hidden;
+    /* コンテンツがはみ出さないようにする */
+    text-overflow: ellipsis;
+    /* はみ出した場合に省略記号を表示 */
+    font-size: 14px;
+    /* フォントサイズを調整 */
+  }
+
+  .schedule-list-container th {
+    white-space: nowrap;
+    /* ヘッダの改行を防ぐ */
+    overflow: hidden;
+    /* コンテンツがはみ出さないようにする */
+    text-overflow: ellipsis;
+    /* はみ出した場合に省略記号を表示 */
+  }
+
+  .schedule-list-container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    overflow: hidden;
+    /* コンテンツがはみ出さないようにする */
+    padding: 0 -10px;
+    overflow-x: auto;
+    /* 横スクロールを許可 */
+    overflow-y: auto;
+  }
+
+  .delete-button-container {
+    display: none;
+  }
+
+  .active-page-line {
+    display: none;
+  }
+
+  /* スマホ表示時はフッターメニューを適用 */
+  .footer-menu {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f8f8;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .menu-button1 {
+    flex-grow: 1;
+    text-align: center;
+    border: none;
+    font-size: 16px;
+    color: #333;
+  }
+
+  .mobile-header-text {
+    position: fixed;
+    font-size: 16px;
+    font-family: "sans-serif";
+    color: #646c79;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -175px !important;
+    margin-left: 70px;
+    width: 300px;
+    z-index: 4000;
+  }
+
+  .fullcalendar-container {
+    margin-top: -60px !important;
+  }
+
+  .dashboard-container {
+    padding: 20px;
+    margin: 150px auto 0;
+    /* ヘッダーメニューと太枠ラインの高さ分だけ余白を追加 */
+    max-width: 1200px;
+  }
+
+}
+
+/* ===== タブレット表示時の調整 ===== */
+@media screen and (min-width: 540px) and (max-width: 820px) {
+  .header-menu {
+    display: none;
+  }
+
+  .menu-1 {
+    display: none;
+  }
+
+  .logout-button {
+    display: none;
+  }
+
+  .greeting-text {
+    display: none;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .fullcalendar-container {
+    margin-top: -100px;
+    /* スマホ表示時の上部余白を減少 */
+  }
+
+  .header-menu {
+    display: none;
+  }
+
+  .schedule-list-container td {
+    white-space: nowrap;
+    /* テキストの改行を防ぐ */
+    overflow: hidden;
+    /* コンテンツがはみ出さないようにする */
+    text-overflow: ellipsis;
+    /* はみ出した場合に省略記号を表示 */
+    font-size: 14px;
+    /* フォントサイズを調整 */
+  }
+
+  .schedule-list-container th {
+    white-space: nowrap;
+    /* ヘッダの改行を防ぐ */
+    overflow: hidden;
+    /* コンテンツがはみ出さないようにする */
+    text-overflow: ellipsis;
+    /* はみ出した場合に省略記号を表示 */
+  }
+
+  .schedule-list-container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    overflow: hidden;
+    /* コンテンツがはみ出さないようにする */
+    padding: 0 -10px;
+    overflow-x: auto;
+    /* 横スクロールを許可 */
+    overflow-y: auto;
+  }
+
+  .delete-button-container {
+    display: none;
+  }
+
+  .active-page-line {
+    display: none;
+  }
+
+  .menu-1 {
+    display: none;
+  }
+
+  /* スマホ表示時はフッターメニューを適用 */
+  .footer-menu {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f8f8;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .menu-button {
+    flex-grow: 1;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    transition: background-color 0.3s ease;
+  }
+
+  .menu-button:hover {
+    background-color: #ddd;
+  }
+
+  .mobile-header-text {
+    position: fixed;
+    font-size: 20px;
+    font-family: "sans-serif";
+    color: #646c79;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -155px !important;
+    margin-left: 450px;
+    width: 300px;
+    z-index: 4000;
+  }
+
+  .fullcalendar-container {
+    margin-top: 10px !important;
+  }
+
+  .dashboard-container {
+    padding: 20px;
+    margin: 150px auto 0;
+    /* ヘッダーメニューと太枠ラインの高さ分だけ余白を追加 */
+    max-width: 1200px;
+  }
+}
+
+/* ===== iPad Pro ==== */
+@media screen and (min-width: 1024px) and (max-width: 1024px) {
+  .header-menu {
+    display: none;
+  }
+
+  .menu-1 {
+    display: none;
+  }
+
+  .logout-button {
+    display: none;
+  }
+
+  .greeting-text {
+    display: none;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .fullcalendar-container {
+    margin-top: -100px;
+    /* スマホ表示時の上部余白を減少 */
+  }
+
+  .header-menu {
+    display: none;
+  }
+
+  .schedule-list-container td {
+    white-space: nowrap;
+    /* テキストの改行を防ぐ */
+    overflow: hidden;
+    /* コンテンツがはみ出さないようにする */
+    text-overflow: ellipsis;
+    /* はみ出した場合に省略記号を表示 */
+    font-size: 14px;
+    /* フォントサイズを調整 */
+  }
+
+  .schedule-list-container th {
+    white-space: nowrap;
+    /* ヘッダの改行を防ぐ */
+    overflow: hidden;
+    /* コンテンツがはみ出さないようにする */
+    text-overflow: ellipsis;
+    /* はみ出した場合に省略記号を表示 */
+  }
+
+  .schedule-list-container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    overflow: hidden;
+    /* コンテンツがはみ出さないようにする */
+    padding: 0 -10px;
+    overflow-x: auto;
+    /* 横スクロールを許可 */
+    overflow-y: auto;
+  }
+
+  .delete-button-container {
+    display: none;
+  }
+
+  .active-page-line {
+    display: none;
+  }
+
+  /* スマホ表示時はフッターメニューを適用 */
+  .footer-menu {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f8f8;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .menu-button {
+    flex-grow: 1;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    transition: background-color 0.3s ease;
+  }
+
+  .menu-button:hover {
+    background-color: #ddd;
+  }
+
+  .mobile-header-text {
+    position: fixed;
+    font-size: 20px;
+    font-family: "sans-serif";
+    color: #646c79;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -155px !important;
+    margin-left: 560px;
+    width: 300px;
+    z-index: 4000;
+  }
+
+  .fullcalendar-container {
+    margin-top: 10px !important;
+    margin-left: -40px;
+  }
+
+  .dashboard-container {
+    padding: 20px;
+    margin: 150px auto 0;
+    /* ヘッダーメニューと太枠ラインの高さ分だけ余白を追加 */
+    max-width: 1200px;
+  }
+
+  .schedule-list-container {
+    margin-left: -50px;
+    margin-right: 250px;
+  }
+}
+
+/* ==== iPhone XR ==== */
+@media screen and (min-width: 414px) and (max-width: 414px) {
+  .mobile-header-text {
+    position: fixed;
+    font-size: 18px;
+    font-family: "sans-serif";
+    color: #646c79;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -160px !important;
+    margin-left: 100px;
+    width: 300px;
+    z-index: 4000;
+  }
+}
+
+/* ===== iPhone 14 Pro Max ==== */
+@media screen and (min-width: 430px) and (max-width: 430px) {
+
+  html,
+  body {
+    overflow-x: hidden;
+    width: 90vh;
+  }
+
+  .header-menu {
+    display: none;
+  }
+
+  .header-menu {
+    display: none;
+  }
+
+  .menu-1 {
+    display: none;
+  }
+
+  .logout-button {
+    display: none;
+  }
+
+  .greeting-text {
+    display: none;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+
+  .schedule-list-container td {
+    white-space: nowrap;
+    /* テキストの改行を防ぐ */
+    overflow: hidden;
+    /* コンテンツがはみ出さないようにする */
+    text-overflow: ellipsis;
+    /* はみ出した場合に省略記号を表示 */
+    font-size: 14px;
+    /* フォントサイズを調整 */
+  }
+
+  .schedule-list-container th {
+    white-space: nowrap;
+    /* ヘッダの改行を防ぐ */
+    overflow: hidden;
+    /* コンテンツがはみ出さないようにする */
+    text-overflow: ellipsis;
+    /* はみ出した場合に省略記号を表示 */
+  }
+
+  .schedule-list-container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    overflow: hidden;
+    /* コンテンツがはみ出さないようにする */
+    padding: 0 -10px;
+    overflow-x: auto;
+    /* 横スクロールを許可 */
+    overflow-y: auto;
+  }
+
+  .delete-button-container {
+    display: none;
+  }
+
+  .active-page-line {
+    display: none;
+  }
+
+  /* スマホ表示時はフッターメニューを適用 */
+  .footer-menu {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f8f8f8;
+    justify-content: space-around;
+    padding: 10px 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+
+  .menu-button {
+    flex-grow: 1;
+    padding: 10px;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    font-size: 16px;
+    color: #333;
+    transition: background-color 0.3s ease;
+  }
+
+  .menu-button:hover {
+    background-color: #ddd;
+  }
+
+  .mobile-header-text {
+    position: fixed;
+    font-size: 16px;
+    font-family: "sans-serif";
+    color: #646c79;
+    font-weight: bold;
+    text-align: center;
+    margin-top: -155px !important;
+    margin-left: 130px;
+    width: 300px;
+    z-index: 4000;
+  }
+
+  .fullcalendar-container {
+    margin-top: -60px !important;
+  }
+
+  .dashboard-container {
+    padding: 20px;
+    margin: 150px auto 0;
+    /* ヘッダーメニューと太枠ラインの高さ分だけ余白を追加 */
+    max-width: 1200px;
+  }
+
+}

@@ -1,0 +1,135 @@
+/* モバイル表示時の管理画面上のスタイル */
+@media (max-width: 768px) {
+  .news-card {
+    width: calc(48% - 10px);
+    /* モバイルでは2列表示 */
+    margin-bottom: 10px;
+    /* カード間の余白を追加 */
+  }
+
+  .news-edit-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 中央揃え */
+    margin-bottom: 20px;
+    padding: 0 10px;
+    width: 100%;
+  }
+
+  .news-post-form {
+    background-color: #f9f9f9;
+    /* フォーム全体に背景色を追加 */
+    border: 1px solid #ddd;
+    /* 境界線を追加 */
+    padding: 10px;
+    /* 全体の余白を追加 */
+    border-radius: 10px;
+    /* 角を丸くする */
+    max-width: 90%;
+    /* 幅を90%に制限 */
+    margin: 0 auto;
+    /* フォームを中央に配置 */
+  }
+
+  .form-group-news {
+    max-width: 90%;
+  }
+
+  .form-control {
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .submit-button,
+  .cancel-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 15px;
+    /* 上部に余白を追加 */
+  }
+
+  .submit-button {
+    background-color: #ffb300;
+    color: #fff;
+    font-weight: bolder;
+  }
+
+  .submit-button:hover {
+    background-color: #e39f00;
+  }
+
+  .cancel-button {
+    background-color: #ccc;
+    color: #333;
+  }
+
+  .cancel-button:hover {
+    background-color: #bbb;
+  }
+
+}
+
+/* PC表示用のスタイル */
+.news-edit-form,
+.news-post-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: -40px;
+  width: 100%;
+}
+
+.form-control {
+  padding: 10px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 400px;
+}
+
+.submit-button,
+.cancel-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.submit-button {
+  background-color: #ffb300;
+  color: #fff;
+  flex-grow: 1;
+  margin-right: 10px;
+  font-weight: bolder;
+}
+
+.submit-button:hover {
+  background-color: #e39f00;
+}
+
+.cancel-button {
+  background-color: #ccc;
+  color: #333;
+  flex-grow: 1;
+}
+
+.cancel-button:hover {
+  background-color: #bbb;
+}

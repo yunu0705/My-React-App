@@ -1,0 +1,475 @@
+/* Login.jsとRegister.jsの設定ファイル */
+
+/* ====== PCスタイル ====== */
+@media screen and (min-width: 1025px) {
+  .p-text {
+    margin-left: -10px;
+    margin-top: -60px !important;
+    font-size: 1.2em;
+    color: #333;
+  }
+
+  .p-text2 {
+    margin-top: -90px;
+    margin-left: 0;
+    font-size: 1.1em !important;
+    color: #333 !important;
+  }
+
+  .p-text4 {
+    text-align: left !important;
+    margin-bottom: 20%;
+    font-size: 1.1em !important;
+  }
+
+  .body-1 {
+    background-image: linear-gradient(90deg, rgb(237, 197, 255), rgba(149, 233, 243, 1));
+    height: 100vh;
+    padding: 80px 0;
+  }
+
+  /* ====== 登録、ログイン画面 ====== */
+
+  .RegisterFormTop {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    padding-top: 80px;
+    margin-left: 600px;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .RegisterSuccess {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    padding-top: 100px;
+    margin-left: 550px;
+    width: 100%;
+    max-width: 600px;
+  }
+
+  .RegisterSuccess p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #1a1010;
+    line-height: 40px;
+  }
+
+  .formFont {
+    margin-bottom: 15px;
+    color: #555;
+  }
+
+  .input:focus {
+    border: 5px solid #4f46e5;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 4px;
+    background-color: #f9fafb;
+    font-size: 1rem;
+    color: #333;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    border-color: #6366f1;
+  }
+
+  .p1 {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .submit button {
+    width: 100%;
+    margin-bottom: 5%;
+    margin-top: -5%;
+    padding: 12px;
+    background-color: #6366f1;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .submit button:hover {
+    background-color: #4f46e5;
+  }
+
+  /* パスワード表示/非表示アイコン */
+  .password-container {
+    position: relative;
+  }
+
+  .password-container input[type="password"] {
+    padding-right: 40px;
+  }
+
+  .password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #9ca3af;
+  }
+
+  .password-toggle-register {
+    position: absolute;
+    top: 65%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #9ca3af;
+  }
+
+  .required {
+    color: rgb(248, 94, 94);
+    /* 赤色に設定 */
+    font-size: 0.875rem;
+    /* 通常サイズより少し小さめに設定 */
+    margin-left: 4px;
+    /* 文字との間に少し余白を追加 */
+  }
+
+
+  /* 使用画像スタイル */
+  .image-styleSL {
+    width: 80%;
+    /* 画像の幅を100%に設定 */
+    height: auto;
+    /* 縦横比を維持 */
+    text-align: center;
+    margin-left: 30px;
+    margin-top: -20%;
+  }
+
+  /* パスワードをお忘れの方 */
+  .forgot-password-link:link {
+    color: #717171;
+    /* クリック前の色 */
+  }
+
+  .forgot-password-link:visited {
+    color: #717171;
+    /* クリック後も同じ色 */
+  }
+
+  .forgot-password-link:hover {
+    color: #0056b3;
+    /* マウスが乗ったときの色（任意） */
+  }
+
+  .forgot-password-link:active {
+    color: #004085;
+    /* クリック中の色（任意） */
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+}
+
+
+/* スマホ向けのメディアクエリ */
+@media screen and (max-width: 430px) {
+  .setting {
+    display: flex;
+    justify-content: center;
+    /* 横方向の中央揃え */
+    align-items: center;
+  }
+
+  .p-text {
+    text-align: center;
+    margin-left: -10px;
+    margin-top: -100px !important;
+    margin-bottom: 40px;
+    font-size: 34px;
+    color:
+      #333;
+  }
+
+  .p-text2 {
+    text-align: left;
+    margin-left: -10%;
+    margin-top: 0px;
+    font-size: 1.1em;
+    color: #333;
+  }
+
+
+  .p-text4 {
+    text-align: left !important;
+    margin-top: 10px !important;
+    margin-left: 0 !important;
+    font-size: 1.0em !important;
+    color: #333 !important;
+  }
+
+  .RegisterSuccess {
+    background-color: #ffffff;
+    padding: 0px;
+    padding-top: 80px;
+    margin: 0 auto;
+    /* フォームを中央に配置 */
+    margin-top: 200px;
+    width: 90%;
+    /* フォームの幅を画面幅の90%に設定 */
+    box-sizing: border-box;
+    /* パディングを含めたボックスサイズを計算 */
+  }
+
+  .RegisterSuccess p {
+    font-size: 13px;
+    margin-bottom: 20px;
+    text-align: left;
+    color: #333;
+    line-height: 30px;
+  }
+
+  .RegisterFormTop {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 0 auto;
+    /* フォームを中央に配置 */
+    margin-top: -50px;
+    width: 90%;
+    /* フォームの幅を画面幅の90%に設定 */
+    box-sizing: border-box;
+    /* パディングを含めたボックスサイズを計算 */
+  }
+
+  .RegisterFormTop input[type="checkbox"] {
+    width: auto;
+    /* チェックボックスは自動幅に設定 */
+    margin: 10;
+    /* チェックボックスの余白をリセット */
+  }
+
+  .formFont label {
+    font-size: 14px;
+  }
+
+  .formFont input {
+    width: 100%;
+    font-size: 12px;
+    padding: 10px;
+  }
+
+  .password-container {
+    position: relative;
+  }
+
+  .password-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+
+  .submit button {
+    width: 100%;
+    margin-top: -5%;
+    padding: 12px;
+    font-size: 16px;
+  }
+
+  .image-styleSL {
+    max-width: 100%;
+    height: auto;
+    margin-left: 0px;
+    margin-top: -10%;
+  }
+
+  .required {
+    font-size: 12px;
+    color: red;
+  }
+
+  .error-message {
+    font-size: 14px;
+    margin-top: 10px;
+  }
+
+  .body-1 {
+    padding: 10px 0;
+  }
+
+  /* パスワード表示/非表示アイコン */
+  .password-container {
+    position: relative;
+  }
+
+  .password-toggle {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #9ca3af;
+  }
+
+  .password-toggle-register {
+    position: absolute;
+    top: 65%;
+    right: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #9ca3af;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    background-color: #f9fafb;
+    font-size: 1rem;
+    color: #333;
+    box-sizing: border-box;
+    outline: none;
+    transition: border-color 0.3s ease;
+  }
+
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="password"]:focus {
+    border-color: #6366f1;
+  }
+
+  .p1 {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .submit button {
+    width: 100%;
+    margin-top: 2%;
+    padding: 12px;
+    background-color: #6366f1;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .submit button:hover {
+    background-color: #4f46e5;
+  }
+
+  .body-1 {
+    background-image: linear-gradient(90deg, rgb(237, 197, 255), rgba(149, 233, 243, 1));
+    height: 100vh;
+    padding: 80px 0;
+  }
+
+  /* パスワードをお忘れの方 */
+  .forgot-password-link:link {
+    color: #717171;
+    /* クリック前の色 */
+  }
+
+  .forgot-password-link:visited {
+    color: #717171;
+    /* クリック後も同じ色 */
+  }
+
+  .forgot-password-link:hover {
+    color: #0056b3;
+    /* マウスが乗ったときの色（任意） */
+  }
+
+  .forgot-password-link:active {
+    color: #004085;
+    /* クリック中の色（任意） */
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  /* ======== パスワード再設定ページ　======== */
+
+  .p-text5 {
+    font-size: 1.0em;
+    text-align: left;
+    margin-bottom: 5%;
+    color: #333;
+  }
+
+  .reset-submit button {
+    width: 100%;
+    margin-bottom: 5%;
+    padding: 12px;
+    background-color: #6366f1;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .reset-submit button:hover {
+    background-color: #4f46e5;
+  }
+
+  h2,
+  p,
+  label {
+    color: #333;
+  }
+
+  .error-message,
+  .success-message {
+    margin-bottom: 10%;
+    /* ボタンとの間に15pxのスペースを追加 */
+  }
+
+  .ResetFormTop {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 0 auto;
+    /* フォームを中央に配置 */
+    margin-top: 100px;
+    width: 420px !important;
+    box-sizing: border-box;
+    /* パディングを含めたボックスサイズを計算 */
+    transform: scale(0.8)
+  }
+
+}
