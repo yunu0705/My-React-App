@@ -5,6 +5,7 @@ import './setting.css';
 import './Register.css';
 import { useNavigate } from 'react-router-dom';
 import logo from '../../images/IMG_5602.png'; // 画像をimport
+import { Helmet } from 'react-helmet';
 
 const Login = () => {
   const [landAccountName, setLandAccountName] = useState('');
@@ -26,7 +27,7 @@ const Login = () => {
     }
 
     try {
-      const response = await axios.post('https://alc-streamersland.com/login', {
+      const response = await axios.post('https://test-app-peche-c2666ebb3dc5.herokuapp.com/login', {
         landAccount_name: landAccountName,
         password: password
       });
@@ -43,10 +44,14 @@ const Login = () => {
   };
 
   return (
+    <>
+    <Helmet>
+    <title>ログイン画面</title>
+  </Helmet>
     <div className="setting">
     <div className="body-1"><div className="RegisterFormTop">
     <img src={logo} className="image-styleSL" alt="ロゴ" /> {/* 修正済み */}
-      <div className="p-text">
+      <div className="p-text3">
       <strong>ログイン画面</strong>
       </div>
       <form onSubmit={handleLogin}>
@@ -78,7 +83,7 @@ const Login = () => {
             maxLength="10"
             required
           />
-          <span className="password-toggle" onClick={togglePasswordVisibility}>
+          <span className="password-toggle-login" onClick={togglePasswordVisibility}>
             {showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
           </span>
         </div>
@@ -98,6 +103,7 @@ const Login = () => {
       </div>
       </form>
     </div></div></div>
+    </>
   );
 };
 

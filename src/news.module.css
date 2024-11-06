@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&family=Modak&family=Noto+Sans+JP:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&family=Mochiy+Pop+One&family=Modak&family=Noto+Sans+JP:wght@100..900&display=swap');
+
+@media screen and (min-width: 1025px) {
+/* ニュースコンテナ全体 */
+.newsContainer {
+  width: 100%;
+  max-width: 398px;
+  margin-left: 1190px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  text-align: left; /* 全体を左寄せ */
+}
+
+/* ニュースがなかった時のテキスト */
+.newsItem{
+  padding-top: 30px;
+  margin-left: 50px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+
+}
+/* News*/
+.newsFont1 {
+  position: relative; /* 擬似要素の基準となるために必要 */
+  text-align: center;
+  font-size: 50px;
+  font-family: "Kaisei Tokumin", sans-serif;
+  margin-left: 950px;
+  margin-bottom: -10px; /* 下線との間に少しスペースを追加 */
+}
+
+.newsFont1::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* テキストの下に下線を配置 */
+  margin-left: -370px;
+  width: 90%; /* 下線の長さ */
+  height: 5px; /* 下線の太さ */
+  background-color: #f0bfbf; /* 下線の色 */
+}
+
+/* 投稿したニュースタイトルの設定 */
+.newsTitle {
+  color: #999;
+  font-family: "Kaisei Tokumin", sans-serif;
+  font-size: 18px; /* フォントサイズを調整 */
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 10px;
+  margin-left: -130px;
+  text-align: left;
+  text-decoration: underline;
+}
+
+/* ニュースカテゴリー（タグ） */
+.newsCategory {
+  text-align: left;
+  font-size: 0.9em;
+  font-family: "Mochiy Pop One", sans-serif;
+  color: #5d5d5d;
+  background-color: #F0BFBF;
+  border-radius: 5px;
+  display: inline-block;
+  margin-left: -130px;
+  padding: 4px 10px;
+  margin-bottom: 10px;
+  font-weight: normal;
+}
+
+/* 日付のスタイル */
+.newsDate {
+  color: #999;
+  font-size: 20px;
+  font-family: "Kaisei Tokumin", sans-serif;
+  margin-bottom: 20px;
+  display: block;
+  text-align: left;
+  margin-left: -130px;
+}
+
+/* ボタンのスタイル */
+.moreButton {
+  margin-left: 95px; /* これでボタンの中央揃えを強制 */
+  padding: 3px 2px;
+  display: block;
+  text-align: center;
+  background-color: #ffb3c1;
+  color: #4d4d4d;
+  border: none;
+  border-radius: 5px;
+  width: 101px;
+  height: 30px;
+  text-decoration: none;
+  font-family: "Kaisei Tokumin";
+  font-size: 16px;
+  font-weight: bold;
+  line-height: normal;
+}
+
+/* ページ全体の横スクロール防止 */
+body {
+  overflow-x: hidden;
+  height: 100vh;
+  width: 100vw;
+}
+}
+
+/* スマホ用のメディアクエリ */
+@media screen and (min-width: 344px) and (max-width: 430px) {
+  .scheduleContainer {
+    max-width: 100%;
+    padding: 10px;
+    margin-top: -10px;
+  }
+/* ニュースコンテナ全体 */
+.newsContainer {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  text-align: left; /* 全体を左寄せ */
+}
+
+/* News*/
+.newsFont1 {
+  position: relative; /* 擬似要素の基準となるために必要 */
+  text-align: center;
+  font-size: 50px;
+  font-family: "Kaisei Tokumin", sans-serif;
+  margin-left: 0px;
+  margin-bottom: -10px; /* 下線との間に少しスペースを追加 */
+}
+
+.newsFont1::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* テキストの下に下線を配置 */
+  margin-left: -250px;
+  width: 100%; /* 下線の長さ */
+  height: 5px; /* 下線の太さ */
+  background-color: #f0bfbf; /* 下線の色 */
+}
+
+/* ニュースがなかった時のテキスト */
+.newsItem{
+  text-align: left;
+  padding-top: 0px;
+}
+
+/* ニュースタイトル */
+.newsTitle {
+  color: #999;
+  font-family: "Kaisei Tokumin", sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+/* ニュースカテゴリー（タグ） */
+.newsCategory {
+  font-size: 0.9em;
+  font-family: "Mochiy Pop One", sans-serif;
+  color: #696969;
+  background-color: #F0BFBF;
+  border-radius: 5px;
+  display: inline-block;
+  padding: 2px 8px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+  font-weight: normal;
+}
+
+/* ニュースアイコン */
+.newsContext::before {
+  content: attr(data-label);
+  display: inline-block;
+  background-color: #F0BFBF;
+  color: #333;
+  border-radius: 3px;
+  padding: 2px 8px;
+  margin-right: 10px;
+  font-size: 0.8em;
+  font-weight: bold;
+}
+
+/* 日付のスタイル */
+.newsDate {
+  color: #999;
+  font-size: 20px;
+  font-family: "Kaisei Tokumin", sans-serif;
+  margin-bottom: 20px;
+  display: block;
+}
+
+/* ボタンのスタイル */
+.moreButton {
+  display: block;
+  text-align: center;
+  background-color: #ffb3c1;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  margin: 10px auto 0 auto;
+  width: 101px;
+  height: 30px;
+  text-decoration: none;
+  font-family: "Kaisei Tokumin";
+  font-size: 16px;
+  font-weight: bold;
+  line-height: normal;
+}
+}

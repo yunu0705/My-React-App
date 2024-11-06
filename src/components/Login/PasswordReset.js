@@ -4,6 +4,7 @@ import axios from 'axios';
 import './Register.css';
 import './PasswordReset.css';
 import './setting.css';
+import { Helmet } from 'react-helmet';
 
 const PasswordReset = () => {
   const { token } = useParams(); // React Routerを使用してトークンを取得
@@ -53,6 +54,10 @@ const PasswordReset = () => {
   };
 
   return (
+    <>
+    <Helmet>
+    <title>パスワードの再設定</title>
+  </Helmet>
     <div className="setting">
     <div className="body-1">
     <div className="ResetFormTop">
@@ -99,6 +104,7 @@ const PasswordReset = () => {
     </div>
     </div>
     </div>
+    </>
   );
 };
 

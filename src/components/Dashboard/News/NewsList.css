@@ -1,247 +1,473 @@
-/* ニュース一覧周りのスタイル */
+@media (min-width: 1025px) {
 
-.news-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: flex-start;
-  ;
-}
+  /* 読み込み中のスタイル */
+  .loading {
+    font-size: 1.5em;
+    text-align: center;
+    padding: 20px;
+    color: #555;
+  }
 
-.news-card {
-  position: relative;
-  width: calc(25% - 20px);
-  /* PC表示時は4列表示 */
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
-}
+  /* スピナーアニメーションの例 */
+  .loading::after {
+    content: ' ';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 3px solid rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    border-top-color: #333;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+  }
 
-.news-checkbox {
-  width: 20px;
-  height: 20px;
-}
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
 
-.checkbox-container {
-  padding: 10px;
-}
+    to {
+      transform: rotate(360deg);
+    }
+  }
 
-.news-info h3 a {
-  text-decoration: underline;
-  /* 常に下線を表示 */
-  color: #333;
-  /* 通常時の文字色 */
-  transition: text-decoration 0.3s ease, color 0.3s ease;
-  /* スムーズな効果を追加 */
-}
+  .news-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+  }
 
-.news-info h3 a:hover {
-  text-decoration: none;
-  /* ホバー時に下線を消す */
-  color: #6dbce7;
-  /* ホバー時の文字色を変更 */
-}
+  .wp-news-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+  }
 
-.news-category {
-  padding: 1px 5px;
-  border-radius: 15px;
-  color: white;
-  text-align: center;
-  font-size: 13px;
-  font-weight: bold;
-  background-color: #7dd4ff;
-  max-width: 60px;
-}
+  .news-card {
+    position: relative;
+    width: calc(25% - 20px);
+    /* PC表示時は4列表示 */
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+  }
 
-.news-category2 {
-  padding: 1px 5px;
-  border-radius: 15px;
-  color: white;
-  text-align: center;
-  font-size: 13px;
-  font-weight: bold;
-  background-color: #ffb5f0;
-  max-width: 60px;
-}
+  .news-checkbox {
+    width: 20px;
+    height: 20px;
+  }
 
-.news-image {
-  width: 100%;
-  height: auto;
-  margin-bottom: 10px;
-}
+  .checkbox-container {
+    padding: 10px;
+  }
 
-.news-info {
-  padding: 16px;
-}
+  .news-info h3 a {
+    text-decoration: underline;
+    /* 常に下線を表示 */
+    color: #333;
+    /* 通常時の文字色 */
+    transition: text-decoration 0.3s ease, color 0.3s ease;
+    /* スムーズな効果を追加 */
+  }
 
-.news-info h3 {
-  margin: 0 0 8px;
-  font-size: 18px;
-}
+  .news-info h3 a:hover {
+    text-decoration: none;
+    /* ホバー時に下線を消す */
+    color: #6dbce7;
+    /* ホバー時の文字色を変更 */
+  }
 
-.news-info p {
-  margin: 0 0 8px;
-  color: #888;
-}
+  .news-category {
+    padding: 1px 5px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: #7dd4ff;
+    max-width: 60px;
+  }
 
-.news-item {
-  padding: 20px;
-  border-radius: 8px;
-  background-color: #ffffff;
-  width: 100%;
-  max-width: 350px;
-  position: relative;
-}
+  .news-category2 {
+    padding: 1px 5px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: #ffb5f0;
+    max-width: 60px;
+  }
 
-.news-title a {
-  color: #313131;
-  /* 通常時のリンク色 */
-}
+  .news-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
 
-.news-title a:hover {
-  color: #ff9ce0;
-  /* ホバー時のリンク色 */
-  text-decoration: none;
-}
+  .news-info {
+    padding: 16px;
+  }
 
-.titleNews {
-  margin-left: 25px;
-  font-size: 35px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
+  .news-info h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+  }
 
-.titleNews h2 {
-  font-size: 2rem;
-  /* タイトルのサイズ */
-  font-weight: bold;
-  /* 太字に設定 */
-  text-align: center;
-  /* テキストを中央揃え */
-  position: relative;
-  /* 擬似要素を使うために position を relative に設定 */
-  display: inline-block;
-  /* テキスト幅を確保 */
-}
+  .news-info p {
+    margin: 0 0 8px;
+    color: #888;
+  }
 
-.titleNews h2::after {
-  content: '';
-  display: block;
-  width: 400%;
-  height: 8px;
-  /* 下線の高さ（太さ） */
-  background: linear-gradient(90deg, #f8e7e7, #ffacf9);
-  /* グラデーションの色 */
-  position: absolute;
-  bottom: -10px;
-  /* テキストの下に配置 */
-  left: 0;
-  z-index: -1;
-  /* テキストの下に配置 */
-}
+  .news-item {
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 350px;
+    position: relative;
+  }
 
-.news-date {
-  color: #666;
-  font-size: 1.1em;
-}
+  .news-title a {
+    color: #313131;
+    /* 通常時のリンク色 */
+  }
 
-.n-p {
-  margin-top: 60px;
+  .news-title a:hover {
+    color: #ff9ce0;
+    /* ホバー時のリンク色 */
+    text-decoration: none;
+  }
 
-}
+  .titleNews {
+    margin-left: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
 
-/* ボタンのスタイル */
-.delete-button {
-  display: inline-block;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-bottom: 10px;
-  padding: 8px;
-  background-color: #b534e8;
-  /* 削除ボタンの背景色 */
-  color: white;
-  text-align: center;
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
-}
+  .titleNews h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
 
-.delete-button:hover {
-  background-color: #9829c4;
-  /* 削除ボタンのホバー時の背景色 */
-}
+  }
 
-.edit-button {
-  display: inline-block;
-  margin-top: 10px;
-  margin-left: 10px;
-  margin-bottom: 10px;
-  padding: 8px;
-  background-color: #2196F3;
-  /* 編集ボタンの背景色 */
-  color: white;
-  text-align: center;
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
-}
+  .titleNews h2::after {
+    content: '';
+    display: block;
+    width: 1700px !important;
+    height: 8px;
+    background: linear-gradient(90deg, #f8e7e7, #ffacf9);
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    z-index: -1;
 
-.edit-button:hover {
-  background-color: #1976D2;
-  /* 編集ボタンのホバー時の背景色 */
-}
+  }
 
-.home-link {
-  text-align: left;
-  margin-left: 10px;
-  margin-top: 10px;
-}
+  .news-date {
+    color: #666;
+    font-size: 1.1em;
+  }
 
-.home-icon {
-  width: 40px;
-  /* アイコンのサイズ */
-  height: 40px;
-  cursor: pointer;
-  margin-left: 10px;
-  transition: transform 0.3s ease;
-}
+  .n-p {
+    margin-top: 60px;
 
-/* PC表示のスタイル */
-.news-item-container {
-  width: calc(25% - 20px);
-  /* PC表示時は4列表示 */
-  margin-bottom: 20px;
-}
+  }
 
-.news-list-container {
-  margin-top: 0px;
-}
+  /* ボタンのスタイル */
+  .delete-button {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding: 8px;
+    background-color: #b534e8;
+    /* 削除ボタンの背景色 */
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
 
-@media (max-width: 768px) {
+  .delete-button:hover {
+    background-color: #9829c4;
+    /* 削除ボタンのホバー時の背景色 */
+  }
+
+  .edit-button {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding: 8px;
+    background-color: #2196F3;
+    /* 編集ボタンの背景色 */
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .edit-button:hover {
+    background-color: #1976D2;
+    /* 編集ボタンのホバー時の背景色 */
+  }
+
+  .home-link {
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  .home-icon {
+    width: 40px;
+    /* アイコンのサイズ */
+    height: 40px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  /* PC表示のスタイル */
   .news-item-container {
-    width: calc(48% - 10px);
-    /* モバイルでは2列表示 */
+    width: calc(25% - 20px);
+    /* PC表示時は4列表示 */
+    margin-bottom: 20px;
   }
 
   .news-list-container {
-    margin-top: -90px;
+    margin-top: 0px;
   }
 }
 
-/* モバイル表示時の「管理画面上」のスタイル */
-@media (max-width: 600px) {
+@media screen and (min-width: 375px) and (max-width: 430px) {
+  /* ニュース一覧周りのスタイル */
+
+  .news-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+    ;
+  }
+
+  .wp-news-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: flex-start;
+  }
+
   .news-card {
-    width: calc(48% - 10px);
-    /* モバイルでは2列表示 */
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
   }
-}
 
-/* モバイル表示時の「WordPress上」のスタイル */
-@media (max-width: 600px) {
+  .news-checkbox {
+    width: 20px;
+    height: 20px;
+  }
+
+  .checkbox-container {
+    padding: 10px;
+  }
+
+  .news-info h3 a {
+    text-decoration: underline;
+    /* 常に下線を表示 */
+    color: #333;
+    /* 通常時の文字色 */
+    transition: text-decoration 0.3s ease, color 0.3s ease;
+    /* スムーズな効果を追加 */
+  }
+
+  .news-info h3 a:hover {
+    text-decoration: none;
+    /* ホバー時に下線を消す */
+    color: #6dbce7;
+    /* ホバー時の文字色を変更 */
+  }
+
+  .news-category {
+    padding: 1px 5px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: #7dd4ff;
+    max-width: 60px;
+  }
+
+  .news-category2 {
+    padding: 1px 5px;
+    border-radius: 15px;
+    color: white;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: #ffb5f0;
+    max-width: 60px;
+  }
+
+  .news-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+  }
+
+  .news-info {
+    padding: 16px;
+  }
+
+  .news-info h3 {
+    margin: 0 0 8px;
+    font-size: 18px;
+  }
+
+  .news-info p {
+    margin: 0 0 8px;
+    color: #888;
+  }
+
   .news-item {
-    font-size: 0.8em;
+    padding: 20px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    width: 35%;
+    max-width: 350px;
+    position: relative;
+  }
+
+  .news-title a {
+    color: #313131;
+    /* 通常時のリンク色 */
+  }
+
+  .news-title a:hover {
+    color: #ff9ce0;
+    /* ホバー時のリンク色 */
+    text-decoration: none;
+  }
+
+  .titleNews {
+    margin-left: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+
+  .titleNews h2 {
+    font-size: 2rem;
+    /* タイトルのサイズ */
+    font-weight: bold;
+    /* 太字に設定 */
+    text-align: center;
+    /* テキストを中央揃え */
+    position: relative;
+    /* 擬似要素を使うために position を relative に設定 */
+    display: inline-block;
+    /* テキスト幅を確保 */
+  }
+
+  .titleNews h2::after {
+    content: '';
+    display: block;
+    width: 400%;
+    height: 8px;
+    /* 下線の高さ（太さ） */
+    background: linear-gradient(90deg, #f8e7e7, #ffacf9);
+    /* グラデーションの色 */
+    position: absolute;
+    bottom: -10px;
+    /* テキストの下に配置 */
+    left: 0;
+    z-index: -1;
+    /* テキストの下に配置 */
+  }
+
+  .news-date {
+    color: #666;
+    font-size: 1.1em;
+  }
+
+  .n-p {
+    margin-top: 60px;
+
+  }
+
+  /* ボタンのスタイル */
+  .delete-button {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding: 8px;
+    background-color: #b534e8;
+    /* 削除ボタンの背景色 */
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .delete-button:hover {
+    background-color: #9829c4;
+    /* 削除ボタンのホバー時の背景色 */
+  }
+
+  .edit-button {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    padding: 8px;
+    background-color: #2196F3;
+    /* 編集ボタンの背景色 */
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .edit-button:hover {
+    background-color: #1976D2;
+    /* 編集ボタンのホバー時の背景色 */
+  }
+
+  .home-link {
+    text-align: left;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+
+  .home-icon {
+    width: 40px;
+    /* アイコンのサイズ */
+    height: 40px;
+    cursor: pointer;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  /* 表示時の「サイト上」のスタイル */
+  .news-item-container {
+    font-size: 16px;
     width: calc(40% - 10px);
     /* モバイルでは2列表示 */
   }
@@ -249,4 +475,45 @@
   .news-list-container {
     margin-top: 0px;
   }
+
+  .news-list-container {
+    margin-top: 0px;
+  }
+
+  .news-card {
+    width: calc(48% - 10px);
+    /* モバイルでは2列表示 */
+  }
+
+  /* 読み込み中のスタイル */
+  .loading {
+    font-size: 1.5em;
+    text-align: center;
+    padding: 20px;
+    color: #555;
+  }
+
+  /* スピナーアニメーションの例 */
+  .loading::after {
+    content: ' ';
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    border: 3px solid rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    border-top-color: #333;
+    animation: spin 1s linear infinite;
+    margin-left: 10px;
+  }
+
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
 }

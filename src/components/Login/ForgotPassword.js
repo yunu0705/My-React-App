@@ -5,6 +5,7 @@ import './Register.css';
 import './ForgotPassword.css';
 import { useNavigate } from 'react-router-dom';
 import logo from '../../images/IMG_5602.png'; // 画像をimport
+import { Helmet } from 'react-helmet';
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState(''); // ユーザーのメールアドレスを取得
@@ -25,7 +26,7 @@ const ForgotPassword = () => {
     }
   
     try {
-      const response = await axios.post('https://alc-streamersland.com/forgot_password', {
+      const response = await axios.post('https://test-app-peche-c2666ebb3dc5.herokuapp.com/forgot_password', {
         email: email,
       });
   
@@ -38,6 +39,10 @@ const ForgotPassword = () => {
   };
 
   return (
+    <>
+    <Helmet>
+    <title>パスワード再発行</title>
+  </Helmet>
     <div className="setting">
       <div className="body-1">
         <div className="RegisterFormTop">
@@ -54,7 +59,7 @@ const ForgotPassword = () => {
                 size="30"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="メールアドレス"
+                placeholder="ご登録時のメールアドレス"
                 required
                 autoComplete="off"
               />
@@ -82,6 +87,7 @@ const ForgotPassword = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

@@ -41,7 +41,7 @@ const HelpForm = () => {
       formData.append('screenshot', screenshot);
     }
 
-    axios.post('http://localhost:3001/api/inquiries_image', formData, {
+    axios.post('https://test-app-peche-c2666ebb3dc5.herokuapp.com/api/inquiries_image', formData, {
       headers: {
         'Content-Type': 'multipart/form-data'
       }

@@ -4,15 +4,25 @@ import NewsList from './NewsList';
 import HamburgerMenu from '../HamburgerMenu';
 import axios from 'axios';
 import HeaderComponent from '../HeaderComponent';
+import { Helmet } from 'react-helmet';
+import { useNavigate } from 'react-router-dom';
 
 const News = ({ userName }) => {
   const [news, setNews] = useState([]);
   const [selectedNews, setSelectedNews] = useState([]);
+  const navigate = useNavigate();
+
+  // ログインしていない場合にリダイレクト
+  useEffect(() => {
+    if (!userName) {
+      navigate("/login"); // ログインしていない場合はログインページにリダイレクト
+    }
+  }, [userName, navigate]);
 
   // ニュースを取得する関数
   const fetchNews = async () => {
     try {
-      const response = await axios.get('http://localhost:3001/api/news');
+      const response = await axios.get('https://test-app-peche-c2666ebb3dc5.herokuapp.com/api/news');
       setNews(response.data);
     } catch (error) {
       console.error('Error fetching news:', error);
@@ -33,7 +43,7 @@ const News = ({ userName }) => {
   const handleDeleteSelected = async () => {
     try {
       await Promise.all(
-        selectedNews.map((id) => axios.delete(`http://localhost:3001/api/news/${id}`))
+        selectedNews.map((id) => axios.delete(`https://test-app-peche-c2666ebb3dc5.herokuapp.com/api/news/${id}`))
       );
       setNews(news.filter((item) => !selectedNews.includes(item.id)));
       setSelectedNews([]); // リセット
@@ -45,7 +55,7 @@ const News = ({ userName }) => {
   // ログアウト処理
   const handleLogout = async () => {
     try {
-      await axios.delete('http://localhost:3001/logout');
+      await axios.delete('https://test-app-peche-c2666ebb3dc5.herokuapp.com/logout');
       window.location.href = '/login'; // ログインページにリダイレクト
     } catch (error) {
       console.error('Logout failed', error);
@@ -53,32 +63,34 @@ const News = ({ userName }) => {
   };
 
   return (
-    <div className="dashboard-container">
-      {/* ログアウトボタンを含むヘッダー */}
-      <HeaderComponent userName={userName} handleLogout={handleLogout} />
+    <>
+      <Helmet>
+        <title>ニュース投稿・編集（管理画面）</title>
+      </Helmet>
+      <div className="dashboard-container">
+        {/* ログアウトボタンを含むヘッダー */}
+        <HeaderComponent userName={userName} handleLogout={handleLogout} />
 
-      <div className="active-page-line">
-        <div className="activePageLine-container">
-          <div className="page-line-text">
-            ニュース投稿・編集
+        <div className="active-page-line">
+          <div className="activePageLine-container">
+            <div className="page-line-text">
+              ニュース投稿・編集
+            </div>
           </div>
         </div>
-      </div>
 
-      {/* スマホ表示でのハンバーガーメニュー */}
-      <HamburgerMenu userName={userName} handleLogout={handleLogout} />
-      <div className="mobile-header-text">
-        ニュース投稿・編集
+        {/* スマホ表示でのハンバーガーメニュー */}
+        <HamburgerMenu userName={userName} handleLogout={handleLogout} />
+
+        {/* ニュース一覧 */}
+        <NewsList 
+          news={news} 
+          handleDeleteSelected={handleDeleteSelected} 
+          selectedNews={selectedNews} 
+          handleSelectNews={handleSelectNews} 
+        />
       </div>
-      
-      {/* ニュース一覧 */}
-      <NewsList 
-        news={news} 
-        handleDeleteSelected={handleDeleteSelected} 
-        selectedNews={selectedNews} 
-        handleSelectNews={handleSelectNews} 
-      />
-    </div>
+    </>
   );
 };
 

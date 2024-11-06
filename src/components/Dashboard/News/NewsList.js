@@ -13,7 +13,7 @@ function NewsList() {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/api/news');
+        const response = await axios.get('https://test-app-peche-c2666ebb3dc5.herokuapp.com/api/news');
         setNews(response.data);
       } catch (error) {
         console.error('Error fetching news:', error);
@@ -40,7 +40,7 @@ function NewsList() {
   const handleDeleteSelected = async () => {
     try {
       await Promise.all(
-        selectedNews.map((id) => axios.delete(`http://localhost:3001/api/news/${id}`))
+        selectedNews.map((id) => axios.delete(`https://test-app-peche-c2666ebb3dc5.herokuapp.com/api/news/${id}`))
       );
       setNews(news.filter((item) => !selectedNews.includes(item.id)));
       setSelectedNews([]);
@@ -58,7 +58,7 @@ function NewsList() {
   const handleUpdateNewsList = async () => {
     // ニュースを再取得する関数
     try {
-      const response = await axios.get('http://localhost:3001/api/news');
+      const response = await axios.get('https://test-app-peche-c2666ebb3dc5.herokuapp.com/api/news');
       setNews(response.data);
     } catch (error) {
       console.error('Error updating news list:', error);

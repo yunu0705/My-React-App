@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cherry+Swash&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yantramanav:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Modak&family=Noto+Sans+JP:wght@100..900&display=swap');
+
+/* PC表示用の画像設定 */
+@media (min-width: 1025px) {
+
+  .loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(246, 228, 246);
+  }
+  
+  .rotatingRing {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 8px solid #c15c93; /* 薄い線の部分 */
+    border-top: 8px solid #ff87c9; /* 上部に追いかける線の色 */
+    border-right: 8px solid #ff87c9;
+    animation: rotate 1s linear infinite;
+  }
+  
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  
+  .imageContainer2 {
+    width: 60%;
+    height: auto; /* 高さを内容に合わせる */
+    padding: 0;
+    max-height: 100%;
+  }
+
+  .mainImage {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Follow Meコンテンツのスタイル */
+.followMeContainer {
+  position: fixed;
+  top: 25%;
+  left: 58%;
+  transform: translate(-50%, -50%); /* 中央揃え */
+  color: rgb(255, 255, 255); 
+  font-family: Arial, sans-serif;
+  text-shadow: #DE99D3;
+  z-index: 1001; 
+}
+/* アイコンのコンテナを縦並びにするための設定 */
+.socialIcons {
+  display: flex;
+  flex-direction: column; /* 縦方向に配置 */
+  align-items: center; /* 中央揃え */
+}
+.followMeText {
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin-left: 25px;
+  writing-mode: vertical-rl;
+  color: rgb(255, 255, 255); 
+  text-shadow: 2px 2px 5px rgba(9, 7, 9, 0.5); 
+}
+
+.followMeText2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  writing-mode: vertical-rl;
+  color: rgb(255, 255, 255); 
+  text-shadow: 2px 2px 5px rgba(47, 37, 37, 0.5); 
+}
+
+.socialIconsImg {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+}
+
+/* ヘッダー */
+.header2 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(90deg, #f8e7e7, #ffe0fd); /* 左から右へのグラデーション */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed; /* 固定化 */
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  padding: 0px 0;
+}
+
+/* サイトタイトル */
+.siteTitle {
+  width: 100vw;
+  color: #DE99D3;
+  text-align: left;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: -10px;
+  font-family: Modak, sans-serif; /* Modakフォントを指定 */
+  font-size: 40px;
+  font-weight: 100;
+  line-height: normal;
+}
+
+.siteTitlebar {
+  background: linear-gradient(90deg, #ffb5f3, #ffcbcb 20%, #ffe1fa 100%) !important;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px; /* 縁取りの幅を2pxに調整 */
+  -webkit-text-stroke-color: rgb(255, 255, 255); /* 縁取り色 */
+
+  
+}
+
+/* スマホ表示の画像設定 */
+@media screen and (min-width: 375px) and (max-width: 430px) {
+  .loadingContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgb(246, 228, 246);
+  }
+  
+  .rotatingRing {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 8px solid #e7b7d1; /* 薄い線の部分 */
+    border-top: 8px solid #ff87c9; /* 上部に追いかける線の色 */
+    border-right: 8px solid #ff87c9;
+    animation: rotate 1s linear infinite;
+  }
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* サイトタイトル */
+.siteTitle {
+  width: auto;
+  color: #DE99D3;
+  text-align: left;
+  margin-right: 10px;
+  margin-left: 10px;
+  margin-bottom: -10px;
+  font-family: Modak, sans-serif; /* Modakフォントを指定 */
+  font-size: 40px;
+  font-weight: 100;
+  line-height: normal;
+}
+
+.siteTitlebar {
+  background: linear-gradient(90deg, #fcd3d3 0%, #f5b8eb 100%) !important;
+  background-clip: text;
+  margin-top: -30px;
+  width: 100vw;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px; /* 縁取りの幅を2pxに調整 */
+  -webkit-text-stroke-color: rgb(255, 255, 255); /* 縁取り色 */
+}
+
+
+/* メイン画像を全幅に表示 */
+.mainImage {
+  width: 100vw; /* ビューポートの全幅に合わせる */
+  height: 100vh;
+  margin-top: 40px;
+  margin-bottom: -30px;
+  object-fit: cover; /* 画像を枠内にフィットさせる */
+  object-position: center; /* 画像の中央を表示 */
+}
+
+/* Follow Meコンテンツのスタイル */
+.followMeContainer {
+  position: fixed;
+  top: 225px;
+  left: 90%;
+  transform: translate(-50%, -50%); /* 中央揃え */
+  color: rgb(255, 255, 255); 
+  font-family: Arial, sans-serif;
+  text-shadow: #DE99D3;
+  z-index: 1001; 
+}
+/* アイコンのコンテナを縦並びにするための設定 */
+.socialIcons {
+  display: flex;
+  flex-direction: column; /* 縦方向に配置 */
+  align-items: center; /* 中央揃え */
+}
+.followMeText {
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  writing-mode: vertical-rl;
+  color: rgb(255, 255, 255); 
+  text-shadow: 2px 2px 5px rgba(89, 69, 88, 0.5); 
+}
+
+.followMeText2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  margin-left: 10px;
+  color: rgb(255, 255, 255); 
+  writing-mode: vertical-rl;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); 
+}
+
+.social-icons-img {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+body {
+  height: 100vh;
+}
+
+
+}
+
+.p1{
+  color:#535353;
+  font-size: 12px;
+}
+
+.formFont{
+  position: fixed;
+  color: #000000;
+  font-family: 'Yantramanav', cursive;
+  font-size: 1em;
+ 
+  
+}
+.label {
+  display: inline-block;
+  width: 80px;
+  vertical-align: top;
+}
+
+
+.submit{
+  text-align: right;
+  position: relative;
+  right: 122px;
+  bottom: -10px;
+  
+}
+
+body {
+  height: 100vh;
+}
+

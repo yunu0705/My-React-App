@@ -1,0 +1,13 @@
+:root {
+    --header-bg: linear-gradient(90deg, #f8e7e7, #ffe0fd); /* デフォルトのヘッダー背景 */
+    --site-titlebar-bg: linear-gradient(90deg, #F0BFBF 0%, #DE99D3 100%); /* タイトルバーのデフォルト背景 */
+  }
+  
+  header {
+    background: var(--header-bg); /* CSS変数を使用 */
+  }
+  
+  .site-titlebar {
+    background: var(--site-titlebar-bg); /* CSS変数を使用 */
+  }
+  

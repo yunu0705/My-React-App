@@ -16,14 +16,15 @@ function NewsEditForm({ selectedNews, onClose, onUpdate }) {
     formData.append('news[date]', date);
     formData.append('news[title]', title);
     formData.append('news[category]', category);
-    formData.append('news[url]', url); // URLフィールドを追加
+    formData.append('news[url]', url || ''); // URLが空の場合は空文字列を設定
     if (image) formData.append('news[image]', image);
 
     try {
-      await axios.put(`http://localhost:3001/api/news/${selectedNews.id}`, formData, {
+      await axios.put(`https://test-app-peche-c2666ebb3dc5.herokuapp.com/api/news/${selectedNews.id}`, formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       onUpdate(); // 更新後の処理
+      onClose(); // フォームを閉じる
     } catch (error) {
       console.error('ニュースの更新に失敗しました:', error);
       alert('ニュースの更新に失敗しました。');
@@ -63,7 +64,7 @@ function NewsEditForm({ selectedNews, onClose, onUpdate }) {
           type="url"
           value={url}
           onChange={(e) => setUrl(e.target.value)}
-          required
+          placeholder="URLがあれば入力" // URLがない場合のヒントを表示
         />
       </div>
       <div>

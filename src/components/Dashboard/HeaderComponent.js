@@ -8,7 +8,7 @@ const HeaderComponent = ({ userName, handleLogout }) => {
         <ul>
           {/* 挨拶文を追加 */}
           <li className="greeting-text">
-            こんにちは、{userName}さん
+            こんにちは、{userName ? `${userName}さん` : "さん"}
           </li>
           <li className="menu-1"><a href="/HelpTop">ヘルプ</a></li>
           <li className="menu-1"><a href="/news">ニュース</a></li>

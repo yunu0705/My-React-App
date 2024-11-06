@@ -1,12 +1,18 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
+import { Helmet } from 'react-helmet';
+import './Register.css';
 
 const RegistrationSuccess = () => {
   const location = useLocation();
   const { email } = location.state || {}; // state経由で渡されたメールアドレスを取得
 
   return (
-<div className="body-1">
+    <>
+    <Helmet>
+    <title>ユーザー登録完了しました</title>
+  </Helmet>
+<div className="body-3">
   <div className="RegisterSuccess">
     <div style={{ textAlign: 'center', padding: '20px' }}>
       <p>
@@ -21,6 +27,7 @@ const RegistrationSuccess = () => {
     </div>
   </div>
 </div>
+</>
   );
 };
 

@@ -1,0 +1,22 @@
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #e6dcdb;
+  }
+  
+  .stretching-cat {
+    width: 100px;
+    height: 100px;
+    background-image: url('../images/00056-751180854.png'); /* 画像を指定 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: stretch 2s infinite;
+  }
+  
+  @keyframes stretch {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2, 0.8); } /* 横に伸びるアニメーション */
+  }
+  

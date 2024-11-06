@@ -1,0 +1,100 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Tokumin&family=Mochiy+Pop+One&family=Modak&family=Noto+Sans+JP:wght@100..900&display=swap');
+
+@media (min-width: 1025px) {
+
+.breadcrumb-separator {
+  margin: 0 10px; /* 左右に5pxのスペースを追加 */
+  font-size: 20px;
+}
+
+.mainFormService {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    padding-top: 80px;
+    width: 100%;
+}
+
+p, h1, h2, h3 {
+    font-family: "Noto Sans JP",sans-serif;
+    color: #333;
+}
+
+.body-2 {
+    background-image: linear-gradient(90deg, rgb(237, 197, 255), rgba(149, 233, 243, 1));
+    height: 100%;
+    padding: 0px 0;
+  }
+
+  .linkService {
+    font-size: 20px;
+    color: #007bff; /* お好きな色に変更してください */
+    text-decoration: none;
+}
+
+.linkService:hover {
+    color: #0056b3; /* ホバー時の色 */
+    text-decoration: none;
+}
+}
+
+@media screen and (min-width: 375px) and (max-width: 430px) {
+
+    .breadcrumb-separator {
+      margin: 0 10px; /* 左右に5pxのスペースを追加 */
+      font-size: 20px;
+    }
+
+    .mainFormService {
+        background-color: #ffffff;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        padding-top: 60px;
+        margin-top: 20px;
+        max-width: 100%; /* 横幅いっぱいに広げる */
+    }
+    
+    h1 {
+        font-size: 24px; /* 見出し1のサイズ */
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+        padding-left: 20px;
+    }
+
+    h3 {
+        font-size: 18px; /* 見出し3のサイズ */
+        margin-top: 1em;
+        margin-bottom: 0.5em;
+        padding-left: 20px;
+    }
+
+    p {
+        font-size: 16px; /* 段落のフォントサイズ */
+        line-height: 1.6; /* 行間を広めに */
+        margin-bottom: 1em; /* 各段落に余白を追加 */
+        padding-right: 20px;
+    }
+    
+    .body-2 {
+        background-image: linear-gradient(90deg, rgb(237, 197, 255), rgba(149, 233, 243, 1));
+        height: 100%;
+        padding: 0px 0;
+      }
+    
+      .linkService {
+        font-size: 16px;
+        color: #007bff; /* お好きな色に変更してください */
+        text-decoration: none;
+    }
+    
+    .linkService:hover {
+        color: #0056b3; /* ホバー時の色 */
+        text-decoration: none;
+    }
+
+    .breadcrumb {
+        display: none;
+    }
+    }

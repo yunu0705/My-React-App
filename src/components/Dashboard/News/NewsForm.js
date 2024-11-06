@@ -24,8 +24,9 @@ function NewsForm({ selectedNews, onClose, onUpdate }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    // URLが入力されている場合のみURLの正規表現チェックを実行
     const urlPattern = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/\S*)?$/;
-    if (!urlPattern.test(url)) {
+    if (url && !urlPattern.test(url)) {
       alert('有効なURLを入力してください。');
       return;
     }
@@ -34,17 +35,17 @@ function NewsForm({ selectedNews, onClose, onUpdate }) {
     formData.append('news[date]', date ? date.toISOString().split('T')[0] : '');
     formData.append('news[title]', title);
     formData.append('news[category]', category);
-    formData.append('news[url]', url);
+    formData.append('news[url]', url || ''); // URLは空でもOK
     if (image) formData.append('news[image]', image);
 
     try {
       if (selectedNews) {
-        await axios.put(`http://localhost:3001/api/news/${selectedNews.id}`, formData, {
+        await axios.put(`https://test-app-peche-c2666ebb3dc5.herokuapp.com/api/news/${selectedNews.id}`, formData, {
           headers: { 'Content-Type': 'multipart/form-data' }
         });
         alert('ニュースが更新されました！');
       } else {
-        const response = await axios.post('http://localhost:3001/api/news', formData, {
+        const response = await axios.post('https://test-app-peche-c2666ebb3dc5.herokuapp.com/api/news', formData, {
           headers: { 'Content-Type': 'multipart/form-data' }
         });
         if (response.status >= 200 && response.status < 300) {
@@ -115,8 +116,7 @@ function NewsForm({ selectedNews, onClose, onUpdate }) {
           className="form-control"
           value={url}
           onChange={(e) => setUrl(e.target.value)}
-          placeholder='https//www.news.com'
-          required
+          placeholder='https://www.news.com'
         />
       </div>
 

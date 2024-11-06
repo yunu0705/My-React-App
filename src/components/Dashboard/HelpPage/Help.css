@@ -15,7 +15,7 @@
     justify-content: flex-end;
     align-items: center;
     /* 垂直方向に中央揃え */
-    margin-top: 5px;
+    margin-top: 15px;
     margin-right: auto;
     margin-left: 250px;
     max-width: 1200px;
@@ -119,7 +119,7 @@
     }
   }
 
-  .mobile-help-text {
+  .mobile-help-text3 {
     display: none;
   }
 
@@ -299,14 +299,14 @@
     display: none;
   }
 
-  .mobile-help-text {
+  .mobile-help-text3 {
     position: fixed;
     font-size: 20px;
     font-family: "sans-serif";
     color: #646c79;
     font-weight: bold;
     text-align: center;
-    margin-top: -290px !important;
+    margin-top: -165px !important;
     margin-left: 70px;
     width: 300px;
     z-index: 4000;
@@ -345,7 +345,7 @@
 
   .mascot-image {
     max-width: 60%;
-    height: 60%;
+    height: auto;
     margin-left: 110px;
     margin-top: -150px;
   }
@@ -558,14 +558,14 @@
 }
 
 @media screen and (min-width: 414px) and (max-width: 414px) {
-  .mobile-help-text {
+  .mobile-help-text3 {
     position: fixed;
     font-size: 20px;
     font-family: "sans-serif";
     color: #646c79;
     font-weight: bold;
     text-align: center;
-    margin-top: -290px !important;
+    margin-top: -165px !important;
     margin-left: 70px;
     width: 300px;
     z-index: 4000;
@@ -645,7 +645,7 @@
 
   .mascot-image {
     max-width: 60%;
-    height: 60%;
+    height: auto;
     margin-left: 110px;
     margin-top: -150px;
   }
@@ -850,14 +850,14 @@
     display: none;
   }
 
-  .mobile-help-text {
+  .mobile-help-text3 {
     position: fixed;
     font-size: 16px;
     font-family: "sans-serif";
     color: #646c79;
     font-weight: bold;
     text-align: center;
-    margin-top: -285px !important;
+    margin-top: -165px !important;
     margin-left: 70px;
     width: 300px;
     z-index: 4000;
@@ -897,7 +897,7 @@
 
   .mascot-image {
     max-width: 60%;
-    height: 60%;
+    height: auto;
     margin-left: 110px;
     margin-top: -150px;
   }
@@ -1145,7 +1145,7 @@
 
   .mascot-image {
     max-width: 60%;
-    height: 60%;
+    height: auto;
     margin-left: 110px;
     margin-top: -150px;
   }
@@ -1348,14 +1348,14 @@
   table {
     display: none;
   }
-  .mobile-help-text {
+  .mobile-help-text3 {
     position: fixed;
     font-size: 20px;
     font-family: "sans-serif";
     color: #646c79;
     font-weight: bold;
     text-align: center;
-    margin-top: -290px !important;
+    margin-top: -165px !important;
     margin-left: 70px;
     width: 300px;
     z-index: 4000;
@@ -1397,7 +1397,7 @@
 
   .mascot-image {
     max-width: 60%;
-    height: 60%;
+    height: auto;
     margin-left: 110px;
     margin-top: -150px;
   }

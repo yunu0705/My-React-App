@@ -10,6 +10,7 @@ import './Dashboard.css';
 import './ModalStyles.css';
 import '../HamburgerMenu.module.css';
 import HeaderComponent from '../HeaderComponent';
+import { Helmet } from 'react-helmet';
 
 const Dashboard = ({ userName }) => {
   const [state, setState] = useState({
@@ -32,6 +33,14 @@ const Dashboard = ({ userName }) => {
   const navigate = useNavigate();
   const userId = 1;
   const scheduleListRef = useRef(null);
+  
+
+  // ログインしていない場合にリダイレクト
+  useEffect(() => {
+    if (!userName) {
+      navigate("/login"); // ログインしていない場合はログインページにリダイレクト
+    }
+  }, [userName, navigate]);
 
   useEffect(() => {
     setKey(prevKey => prevKey + 1);
@@ -47,7 +56,7 @@ const Dashboard = ({ userName }) => {
 
   const fetchAllSchedules = async () => {
     try {
-      const response = await axios.get('https://alc-streamersland.com/api/schedules', {
+      const response = await axios.get('https://test-app-peche-c2666ebb3dc5.herokuapp.com/api/schedules', {
         params: { user_id: userId },
         withCredentials: true
       });
@@ -57,6 +66,7 @@ const Dashboard = ({ userName }) => {
         totalPages: Math.ceil(response.data.schedules.length / 7)
       }));
     } catch (error) {
+      console.error('Error fetching schedules:', error.response ? error.response : error);
       setState(prev => ({ ...prev, error: '全てのスケジュールの取得に失敗しました。' }));
     }
   };
@@ -91,13 +101,15 @@ const Dashboard = ({ userName }) => {
 
     try {
       for (let scheduleId of state.selectedSchedules) {
-        await axios.delete(`https://alc-streamersland.com/api/schedules/${scheduleId}`);
+        await axios.delete(`https://test-app-peche-c2666ebb3dc5.herokuapp.com/api/schedules/${scheduleId}`, {
+          withCredentials: true
+        });
       }
       fetchAllSchedules();
       setState(prev => ({ ...prev, selectedSchedules: new Set() }));
       alert('選択したスケジュールを削除しました。');
     } catch (error) {
-      console.error("Error deleting schedules:", error);
+      console.error("Error deleting schedules:", error.response ? error.response : error);
       setState(prev => ({ ...prev, error: 'スケジュールの削除に失敗しました。' }));
     }
   };
@@ -187,12 +199,13 @@ const Dashboard = ({ userName }) => {
 
     try {
       if (state.selectedScheduleForEdit) {
-        await axios.put(`https://alc-streamersland.com/api/schedules/${state.selectedScheduleForEdit.id}`, { schedule: newSchedule });
+        await axios.put(`https://test-app-peche-c2666ebb3dc5.herokuapp.com/api/schedules/${state.selectedScheduleForEdit.id}`, { schedule: newSchedule }, { withCredentials: true });
       } else {
-        await axios.post('https://alc-streamersland.com/api/schedules', { schedule: newSchedule });
+        await axios.post('https://test-app-peche-c2666ebb3dc5.herokuapp.com/api/schedules', { schedule: newSchedule }, { withCredentials: true });
       }
       fetchAllSchedules();
     } catch (error) {
+      console.error('Error saving schedule:', error.response ? error.response : error);
       setState(prev => ({ ...prev, error: 'スケジュールの作成/編集に失敗しました。' }));
     } finally {
       setState(prev => ({ ...prev, modalIsOpen: false, selectedScheduleForEdit: null }));
@@ -201,7 +214,7 @@ const Dashboard = ({ userName }) => {
 
   const handleLogout = async () => {
     try {
-      await axios.delete('https://alc-streamersland.com/logout');
+      await axios.delete('https://test-app-peche-c2666ebb3dc5.herokuapp.com/logout', { withCredentials: true });
       window.location.href = '/login';
     } catch (error) {
       console.error('Logout failed', error);
@@ -209,85 +222,87 @@ const Dashboard = ({ userName }) => {
   };
 
   return (
-    <div className="dashboard-container">
-      <HamburgerMenu userName={userName} handleLogout={handleLogout} />
-      <HeaderComponent userName={userName} handleLogout={handleLogout} />
-      <div className="active-page-line">
-        <div className="activePageLine-container">
-          <div className="page-line-text">スケジュール作成・編集</div>
-          <Button 
-            variant="contained" 
-            sx={{ backgroundColor: '#b534e8', color: 'white' }}
-            onClick={handleDeleteSchedule}
-            className="delete-button"
-          >
-            削除
-          </Button>
+    <>
+      <Helmet>
+        <title>スケジュール作成・編集（管理画面)</title>
+      </Helmet>
+      <div className="dashboard-container">
+        <HamburgerMenu userName={userName} handleLogout={handleLogout} />
+        <HeaderComponent userName={userName} handleLogout={handleLogout} />
+        <div className="active-page-line">
+          <div className="activePageLine-container">
+            <div className="page-line-text">スケジュール作成・編集</div>
+            <Button 
+              variant="contained" 
+              sx={{ backgroundColor: '#b534e8', color: 'white' }}
+              onClick={handleDeleteSchedule}
+              className="delete-button"
+            >
+              削除
+            </Button>
 
-          <Button 
-            variant="contained" 
-            sx={{ backgroundColor: '#2196F3', color: 'white' }}
-            onClick={handleEditSchedule}
-            className="edit-button2"
-          >
-            編集
-          </Button>
+            <Button 
+              variant="contained" 
+              sx={{ backgroundColor: '#2196F3', color: 'white' }}
+              onClick={handleEditSchedule}
+              className="edit-button2"
+            >
+              編集
+            </Button>
 
-          <Button 
-            variant="contained" 
-            sx={{ backgroundColor: '#4CAF50', color: 'white' }}
-            onClick={scrollToScheduleList}
-            className="schedule-list-button"
-          >
-            配信スケジュール一覧
-          </Button>
+            <Button 
+              variant="contained" 
+              sx={{ backgroundColor: '#4CAF50', color: 'white' }}
+              onClick={scrollToScheduleList}
+              className="schedule-list-button"
+            >
+              配信スケジュール一覧
+            </Button>
+          </div>
         </div>
-      </div>
-      <div className="mobile-header-text">
-        配信スケジュール作成・編集
-      </div>
 
-      {state.error && <Alert severity="error" style={{ marginBottom: 20 }}>{state.error}</Alert>}
-      <div className="fullcalendar-container">
-        <CalendarComponent 
-          key={key} 
-          schedules={state.allSchedules}
-          onEventClick={handleEventClick}
-          onDateClick={handleDateClick}
-          selectedSchedules={state.selectedSchedules}
+        {state.error && <Alert severity="error" style={{ marginBottom: 20 }}>{state.error}</Alert>}
+        <div className="fullcalendar-container">
+          <CalendarComponent 
+            key={key} 
+            schedules={state.allSchedules}
+            onEventClick={handleEventClick}
+            onDateClick={handleDateClick}
+            selectedSchedules={state.selectedSchedules}
+          />
+        </div>
+        <div ref={scheduleListRef} className="schedule-list-container">
+          <Typography variant="h6" style={{ marginTop: 40 }}>配信スケジュール一覧</Typography>
+          <ScheduleList
+            schedules={state.paginatedSchedules}
+            selectedSchedules={state.selectedSchedules}
+            onSelectSchedule={handleEventClick}
+          />
+          <div className="pagination-controls">
+            <Button onClick={goToPreviousPage} disabled={state.currentPage === 1}>Previous</Button>
+            <span>Page {state.currentPage} of {state.totalPages}</span>
+            <Button onClick={goToNextPage} disabled={state.currentPage === state.totalPages}>Next</Button>
+          </div>
+        </div>
+
+        <div className="footer-menu">
+          <Button className="menu-button1" onClick={handleDeleteSchedule}>削除</Button>
+          <Button className="menu-button1" onClick={handleEditSchedule}>編集</Button> 
+          <Button className="menu-button1" onClick={scrollToScheduleList}>配信スケジュール一覧</Button>
+          <Button className="menu-button1" onClick={openNewScheduleModal}>＋</Button>
+        </div>
+
+        <ScheduleModal
+          isOpen={state.modalIsOpen}
+          onRequestClose={() => setState(prev => ({ ...prev, modalIsOpen: false }))}
+          onSave={handleSaveSchedule}
+          initialStartTime={state.startTime}
+          initialEndTime={state.endTime}
+          initialDescription={state.description}
+          clickedDate={state.clickedDate}
         />
       </div>
-      <div ref={scheduleListRef} className="schedule-list-container">
-        <Typography variant="h6" style={{ marginTop: 40 }}>配信スケジュール一覧</Typography>
-        <ScheduleList
-          schedules={state.paginatedSchedules}
-          selectedSchedules={state.selectedSchedules}
-          onSelectSchedule={handleEventClick}
-        />
-        <div className="pagination-controls">
-          <Button onClick={goToPreviousPage} disabled={state.currentPage === 1}>Previous</Button>
-          <span>Page {state.currentPage} of {state.totalPages}</span>
-          <Button onClick={goToNextPage} disabled={state.currentPage === state.totalPages}>Next</Button>
-        </div>
-      </div>
-
-      <div className="footer-menu">
-        <Button className="menu-button1" onClick={handleDeleteSchedule}>削除</Button>
-        <Button className="menu-button1" onClick={handleEditSchedule}>編集</Button> 
-        <Button className="menu-button1" onClick={scrollToScheduleList}>配信スケジュール一覧</Button>
-        <Button className="menu-button1" onClick={openNewScheduleModal}>＋</Button>
-      </div>
-
-      <ScheduleModal
-        isOpen={state.modalIsOpen}
-        onRequestClose={() => setState(prev => ({ ...prev, modalIsOpen: false }))}
-        onSave={handleSaveSchedule}
-        initialStartTime={state.startTime}
-        initialEndTime={state.endTime}
-        initialDescription={state.description}
-        clickedDate={state.clickedDate}
-      />
-    </div>
+    </>
   );
 };
 
